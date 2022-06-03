@@ -1,0 +1,43 @@
+
+<app-carousel></app-carousel>
+
+<!-- Barra -->
+<div class="row justify-content-end py-2 bg-gray-400">
+  <div class="col-auto">
+    <button class="btn btn-light" (click)="changeOrder()">
+      <i [class]="order"></i>
+    </button>
+  </div>
+  <div class="col-auto">
+    <button
+      class="btn btn-light"
+      (click)="changeToGrid()"
+      title="Visualização de Grade"
+    >
+      <i class="fa-solid fa-grip"></i>
+    </button>
+  </div>
+  <div class="col-auto">
+    <button
+      class="btn btn-light"
+      (click)="changeToList()"
+      title="Visualização de Linhas"
+    >
+      <i class="fa-solid fa-grip-lines"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Product Grid -->
+<div *ngIf="modeGrid" class="row row-cols-3 row-cols-md-4 gy-3 mt-5">
+  <div class="col" *ngFor="let product of products">
+    <app-product-card  [product]="product"></app-product-card>
+  </div>
+</div>
+
+<!-- Product List -->
+<div *ngIf="!modeGrid" >
+  <div *ngFor="let product of products">
+    <app-product-horizontal-card [product]="product"></app-product-horizontal-card>
+  </div>
+</div>

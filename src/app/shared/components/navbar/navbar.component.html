@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg bg-light sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <div class="brand">
+        <div class="row row-cols-2 m-0 p-0 gx-1">
+          <div class="col text-center lh-1">S</div>
+          <div class="col text-center lh-1">H</div>
+          <div class="col text-center lh-1">O</div>
+          <div class="col text-center lh-1">P</div>
+        </div>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Original</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Promotions</a>
+        </li>
+      </ul>
+      <div class="row gx-1 align-items-center">
+        <div class="col-auto">
+          <button class="btn btn-light">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-light">
+            <i class="fa-solid fa-basket-shopping"></i>
+          </button>
+        </div>
+
+        <div class="col-auto" *ngIf="isSigned; else elseBlock">
+          <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="" alt="" style="width: 25px; height: 25px; background-color: gray; border-radius: 50%; object-fit: cover;">
+              <span class="ms-2">{{user.username}}</span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Minha Conta</a></li>
+              <li><a class="dropdown-item" href="#">Sair</a></li>
+            </ul>
+          </div>
+        </div>
+        <ng-template #elseBlock>
+          <div class="col-auto">
+            <button class="btn btn-primary" type="button">
+              Sign In
+            </button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-primary" type="button">
+              Sign Up
+            </button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</nav>
